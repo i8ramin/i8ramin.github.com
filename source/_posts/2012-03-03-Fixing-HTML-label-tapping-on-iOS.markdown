@@ -3,7 +3,7 @@ layout: post
 title: "Fixing HTML label tapping on iOS"
 date: 2012-03-03 15:54
 comments: true
-categories: 
+categories: mobile hack
 ---
 
 This one should be filed under the WTF category. Apparently, clicking/tapping on HTML
