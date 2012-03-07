@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://i8ramin.github.com
+url: http://getintothis.com
 title: Get Into This
 subtitle: All the cool things.
 author: Ramin B.
@@ -65,7 +65,7 @@ github_skip_forks: true
 
 # Twitter
 twitter_user: i8ramin
-twitter_tweet_count: 4
+twitter_tweet_count: 3
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
