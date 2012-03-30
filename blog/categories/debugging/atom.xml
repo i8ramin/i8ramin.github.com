@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: debugging | Get Into This]]></title>
+  <link href="http://getintothis.com/blog/categories/debugging/atom.xml" rel="self"/>
+  <link href="http://getintothis.com/"/>
+  <updated>2012-03-30T16:14:41-04:00</updated>
+  <id>http://getintothis.com/</id>
+  <author>
+    <name><![CDATA[Ramin B.]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Triggering Zepto Tap Event using Click]]></title>
+    <link href="http://getintothis.com/blog/2012/03/04/triggering-zepto-tap-event-using-click/"/>
+    <updated>2012-03-04T21:10:00-05:00</updated>
+    <id>http://getintothis.com/blog/2012/03/04/triggering-zepto-tap-event-using-click</id>
+    <content type="html"><![CDATA[<p>This one will come in handy if you are testing/debugging your mobile website on a Desktop browser (i.e. Safari, Chrome) with a custom User-Agent set and are utilizing the <code>tap</code> event provided by <a href="http://zeptojs.com/">Zepto JS</a>.</p>
+
+<p>The issue with binding the <code>tap</code> event is that you cannot trigger them with a mouse click. And we all know that debugging on simulator and emulators is a pain in the ass, so hopefully this little code snippet will save you some time.</p>
+
+<p>```javascript
+(function($) {</p>
+
+<pre><code>// only do this if not on a touch device
+if (!('ontouchend' in window)) {
+    $(document).delegate('body', 'click', function(e) {
+        $(e.target).trigger('tap');
+    });
+}
+</code></pre>
+
+<p>})(window.Zepto);
+```</p>
+
+<p>You can use the same technique to trigger <code>touchstart</code> and <code>touchend</code> events using <code>mousedown</code> and <code>mouseup</code>.</p>
+]]></content>
+  </entry>
+  
+</feed>

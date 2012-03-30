@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://getintothis.com/blog/2012/03/03/Fixing-HTML-label-tapping-on-iOS/</loc>
+        <lastmod>2012-03-30T15:36:26-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://getintothis.com/blog/2012/03/04/triggering-zepto-tap-event-using-click/</loc>
+        <lastmod>2012-03-30T15:36:26-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://getintothis.com/blog/2012/03/30/fix-blurry-images-in-emails-viewed-on-retina-devices/
+        </loc>
+        <lastmod>2012-03-30T15:55:27-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://getintothis.com/about/</loc>
+        <lastmod>2012-03-30T15:38:22-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://getintothis.com/blog/archives/</loc>
+        <lastmod>2012-03-30T15:55:27-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://getintothis.com/</loc>
+        <lastmod>2012-03-30T15:55:27-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://getintothis.com/sandbox/</loc>
+        <lastmod>2012-03-30T15:38:22-04:00</lastmod>
+    </url>
+</urlset>

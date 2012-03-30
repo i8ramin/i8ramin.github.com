@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: hack | Get Into This]]></title>
+  <link href="http://getintothis.com/blog/categories/hack/atom.xml" rel="self"/>
+  <link href="http://getintothis.com/"/>
+  <updated>2012-03-30T16:14:41-04:00</updated>
+  <id>http://getintothis.com/</id>
+  <author>
+    <name><![CDATA[Ramin B.]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing HTML label tapping on iOS]]></title>
+    <link href="http://getintothis.com/blog/2012/03/03/Fixing-HTML-label-tapping-on-iOS/"/>
+    <updated>2012-03-03T15:54:00-05:00</updated>
+    <id>http://getintothis.com/blog/2012/03/03/Fixing-HTML-label-tapping-on-iOS</id>
+    <content type="html"><![CDATA[<p>This one should be filed under the WTF category. Apparently, clicking/tapping on HTML
+<code>&lt;label&gt;</code> in current versions (5.0 or older) of iOS Mobile Safari does not focus the corresponding
+<code>form</code> element. Not sure if this a bug or done intentionally, but not only is it annoying, but also an accessibility issue.</p>
+
+<p>There is a simple CSS "fix" for this, and it is seems to work pretty well across all form elements:</p>
+
+<p><code>css
+label { cursor: pointer; }
+</code></p>
+
+<p>Yeah, that's it. Go figure.</p>
+]]></content>
+  </entry>
+  
+</feed>
