@@ -10,8 +10,8 @@ This is a super simple and easy fix for the blurry image problem you may have
 noticed when reading emails on your retina capable device. Images and logos appear
 all blurry and nobody likes that.
 
-{% img /images/2012-30-03/email/email@2x.png Retina version %}
 {% img /images/2012-30-03/email/email.png Non-retina version %}
+{% img /images/2012-30-03/email/email@2x.png Retina version %}
 
 The trick is to create a 2x version of your image, but to set the width and height
 values to the smaller version. For non-retina devices, you will get a higher res
