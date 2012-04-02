@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>about - Get Into This</title>
+  <title>Git grep and blame bash function - Get Into This</title>
   <meta name="author" content="Ramin B.">
 
   
-  <meta name="description" content="About Mar 30th, 2012 Mar 30th, 2012 Tweet Comments Please enable JavaScript to view the comments powered by Disqus. Recent Posts Git grep and blame &hellip;">
+  <meta name="description" content="Git has two very useful commands, git grep and git blame. The first one
+will find and print lines matching a certain pattern. The second one, given a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://getintothis.com/about">
+  <link rel="canonical" href="http://getintothis.com/blog/2012/04/02/git-grep-and-blame-bash-function">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,32 +76,15 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">About</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-30T12:16:00-04:00" pubdate data-updated="true">Mar 30<span>th</span>, 2012</time></p>
-  </header>
-  
-  
-
-  
-    <footer>
+    
+      <h1 class="entry-title">Git Grep and Blame Bash Function</h1>
+    
+    
       <p class="meta">
         
-        
 
 
 
@@ -112,21 +96,86 @@
   
 
 
-<time datetime="2012-03-30T12:16:00-04:00" pubdate data-updated="true">Mar 30<span>th</span>, 2012</time>
+<time datetime="2012-04-02T18:00:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Git has two very useful commands, <code>git grep</code> and <code>git blame</code>. The first one
+will find and print lines matching a certain pattern. The second one, given a
+file and line number, will tell you what revision and author last modified that line.</p>
+
+<p>I was looking for a command that do both, but it seems that git is lacking such
+a command. Luckily, you can achieve this by using a simple bash function.</p>
+
+<div><script src='https://gist.github.com/2287490.js?file=ggb.sh'></script>
+<noscript><pre><code># runs git grep on a pattern, and then uses git blame to who did it
+ggb() {
+    git grep -n $1 | while IFS=: read i j k; do git blame -L $j,$j $i | cat; done
+}</code></pre></noscript></div>
+
+
+<p>Simply add that function to your ~/.bashrc file (or where ever you keep your aliases and
+functions), and you will be able to do:</p>
+
+<p><code>&gt;ggb "Some string"</code></p>
+
+<p>And this will grep your entire repository for &#8220;Some string&#8221; and print out the blame
+information for the file containing that pattern.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://getintothis.com/about/index.html" data-via="i8ramin" data-counturl="http://getintothis.com/about/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Ramin B.</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-02T18:00:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bash/'>bash</a>, <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://getintothis.com/blog/2012/04/02/git-grep-and-blame-bash-function/" data-via="i8ramin" data-counturl="http://getintothis.com/blog/2012/04/02/git-grep-and-blame-bash-function/" >Tweet</a>
   
   
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2012/03/30/fix-blurry-images-in-emails-viewed-on-retina-devices/" title="Previous Post: Fix blurry images in emails viewed on retina devices">&laquo; Fix blurry images in emails viewed on retina devices</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -231,8 +280,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://getintothis.com/about/index.html';
-        var disqus_url = 'http://getintothis.com/about/index.html';
+        var disqus_identifier = 'http://getintothis.com/blog/2012/04/02/git-grep-and-blame-bash-function/';
+        var disqus_url = 'http://getintothis.com/blog/2012/04/02/git-grep-and-blame-bash-function/';
         var disqus_script = 'embed.js';
       
     (function () {

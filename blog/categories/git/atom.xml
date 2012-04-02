@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | Get Into This]]></title>
+  <link href="http://getintothis.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://getintothis.com/"/>
+  <updated>2012-04-02T19:02:17-04:00</updated>
+  <id>http://getintothis.com/</id>
+  <author>
+    <name><![CDATA[Ramin B.]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git grep and blame bash function]]></title>
+    <link href="http://getintothis.com/blog/2012/04/02/git-grep-and-blame-bash-function/"/>
+    <updated>2012-04-02T18:00:00-04:00</updated>
+    <id>http://getintothis.com/blog/2012/04/02/git-grep-and-blame-bash-function</id>
+    <content type="html"><![CDATA[<p>Git has two very useful commands, <code>git grep</code> and <code>git blame</code>. The first one
+will find and print lines matching a certain pattern. The second one, given a
+file and line number, will tell you what revision and author last modified that line.</p>
+
+<p>I was looking for a command that do both, but it seems that git is lacking such
+a command. Luckily, you can achieve this by using a simple bash function.</p>
+
+<p><div><script src='https://gist.github.com/2287490.js?file=ggb.sh'></script>
+<noscript><pre><code># runs git grep on a pattern, and then uses git blame to who did it
+ggb() {
+    git grep -n $1 | while IFS=: read i j k; do git blame -L $j,$j $i | cat; done
+}</code></pre></noscript></div>
+</p>
+
+<p>Simply add that function to your ~/.bashrc file (or where ever you keep your aliases and
+functions), and you will be able to do:</p>
+
+<p><code>&gt;ggb "Some string"</code></p>
+
+<p>And this will grep your entire repository for "Some string" and print out the blame
+information for the file containing that pattern.</p>
+]]></content>
+  </entry>
+  
+</feed>
